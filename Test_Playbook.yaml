@@ -1,0 +1,9 @@
+---
+- name: Check Device IP Address
+  hosts: all
+  gather_facts: no  # Disable gathering facts since it's not needed for network devices
+  
+  tasks:
+    - name: Display IP address of devices
+      debug:
+        msg: "The IP address of {{ inventory_hostname }} is {{ ansible_host }}"
